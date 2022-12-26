@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/./assests/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/./assests/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/./assests/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/./assests/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/./assests/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>Hexo 系列教程 3：博客配置 | Ryougi&#39;s Blog</title>
+
+
+    <meta name="keywords" content="Hexo">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="网站配置打开 blog 根目录里的_config.yml文件，也称为 站点配置文件。下面只介绍一些必要的选项： 网站根据自己的博客需要更改设置。    参数 描述    title 网站标题   subtitle 网站副标题   description 网站描述   keywords 网站的关键词。支持多个关键词。   author 您的名字   language 网站使用的语言。对于简体中文用户">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 系列教程 3：博客配置">
+<meta property="og:url" content="https://candyknife.github.io/2022/12/26/hexo-03/index.html">
+<meta property="og:site_name" content="Ryougi&#39;s Blog">
+<meta property="og:description" content="网站配置打开 blog 根目录里的_config.yml文件，也称为 站点配置文件。下面只介绍一些必要的选项： 网站根据自己的博客需要更改设置。    参数 描述    title 网站标题   subtitle 网站副标题   description 网站描述   keywords 网站的关键词。支持多个关键词。   author 您的名字   language 网站使用的语言。对于简体中文用户">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-12-26T06:24:23.000Z">
+<meta property="article:modified_time" content="2022-12-26T07:57:30.113Z">
+<meta property="article:author" content="Yin Luo">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary_large_image">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" >
+        
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none">
+        
+    
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/style/dark.css">
+
+    
+<script src="/js/darkmode.js"></script>
+
+
+
+     
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+        <div id="app" tabindex="-1">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Ryougi&#39;s Blog</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/categories/" class="navbar-menu button">分类</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">归档</a>
+                
+                    <a href="/about/" class="navbar-menu button">关于我</a>
+                
+            </div>
+        
+        
+        
+    <a href="/search/" id="btn-search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="32"><path d="M192 448c0-141.152 114.848-256 256-256s256 114.848 256 256-114.848 256-256 256-256-114.848-256-256z m710.624 409.376l-206.88-206.88A318.784 318.784 0 0 0 768 448c0-176.736-143.264-320-320-320S128 271.264 128 448s143.264 320 320 320a318.784 318.784 0 0 0 202.496-72.256l206.88 206.88 45.248-45.248z"></path></svg>
+    </a>
+
+
+        
+        
+    <a href="javaScript:void(0);" id="btn-toggle-dark">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </a>
+
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/categories/" class="dropdown-menu button">分类</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">归档</a>
+                
+                    <a href="/about/" class="dropdown-menu button">关于我</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        Hexo 系列教程 3：博客配置
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2022/12/" class="post-meta__date button">2022-12-26</a>
+        
+    <span class="separate-dot"></span><a href="/categories/%E6%8A%80%E6%9C%AF/" class="button">技术</a>
+
+ 
+        
+    
+     
+    <span id="busuanzi_container_page_pv" hidden>
+        <span class="separate-dot"></span>
+        <span></span>
+        <span id="busuanzi_value_page_pv"></span>
+        <span>Views</span>
+    </span>
+
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE"><span class="toc-text">网站配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99"><span class="toc-text">网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E4%BD%9C"><span class="toc-text">写作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE"><span class="toc-text">分类 &amp; 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F-x2F-%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F"><span class="toc-text">日期 &#x2F; 时间格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%A1%B5"><span class="toc-text">分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-text">扩展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="toc-text">主题配置</span></a></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE"><span class="toc-text">网站配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99"><span class="toc-text">网站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E4%BD%9C"><span class="toc-text">写作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB-amp-%E6%A0%87%E7%AD%BE"><span class="toc-text">分类 &amp; 标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E6%9C%9F-x2F-%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F"><span class="toc-text">日期 &#x2F; 时间格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%A1%B5"><span class="toc-text">分页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-text">扩展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="toc-text">主题配置</span></a></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header"></div>
+    <div class="post__content">
+        <h2 id="网站配置"><a href="#网站配置" class="headerlink" title="网站配置"></a>网站配置</h2><p>打开 blog 根目录里的<code>_config.yml</code>文件，也称为 <strong>站点配置文件</strong>。下面只介绍一些必要的选项：</p>
+<h3 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h3><p>根据自己的博客需要更改设置。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td><code>subtitle</code></td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td>网站的关键词。支持多个关键词。</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>您的名字</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 <code>zh-Hans</code>和 <code>zh-CN</code>。</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>网站时区。Hexo 默认使用您电脑的时区。请参考 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">时区列表</a> 进行设置，如 <code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。一般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code>。</td>
+</tr>
+</tbody></table>
+<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><p>默认不需要更改。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>new_post_name</code></td>
+<td>新文章的文件名称</td>
+<td>:title.md</td>
+</tr>
+<tr>
+<td><code>default_layout</code></td>
+<td>预设布局</td>
+<td>post</td>
+</tr>
+<tr>
+<td><code>titlecase</code></td>
+<td>把标题转换为 title case</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>external_link</code></td>
+<td>在新标签中打开链接</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>external_link.enable</code></td>
+<td>在新标签中打开链接</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>external_link.field</code></td>
+<td>对整个网站（<code>site</code>）生效或仅对文章（<code>post</code>）生效</td>
+<td><code>site</code></td>
+</tr>
+<tr>
+<td><code>external_link.exclude</code></td>
+<td>需要排除的域名。主域名和子域名如 <code>www</code> 需分别配置</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>filename_case</code></td>
+<td>把文件名称转换为 (1) 小写或 (2) 大写</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>render_drafts</code></td>
+<td>显示草稿</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>post_asset_folder</code></td>
+<td>启动 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">Asset 文件夹</a></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>relative_link</code></td>
+<td>把链接改为与根目录的相对位址</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>future</code></td>
+<td>显示未来的文章</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>highlight</code></td>
+<td>代码块的设置, 请参考 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/syntax-highlight#Highlight-js">Highlight.js</a> 进行设置</td>
+<td></td>
+</tr>
+<tr>
+<td><code>prismjs</code></td>
+<td>代码块的设置, 请参考 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS">PrismJS</a> 进行设置</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="分类-amp-标签"><a href="#分类-amp-标签" class="headerlink" title="分类 &amp; 标签"></a>分类 &amp; 标签</h3><p>默认不需要更改。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>default_category</code></td>
+<td>默认分类</td>
+<td><code>uncategorized</code></td>
+</tr>
+<tr>
+<td><code>category_map</code></td>
+<td>分类别名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tag_map</code></td>
+<td>标签别名</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="日期-x2F-时间格式"><a href="#日期-x2F-时间格式" class="headerlink" title="日期 &#x2F; 时间格式"></a>日期 &#x2F; 时间格式</h3><p>Hexo 使用 <a target="_blank" rel="noopener" href="http://momentjs.com/">Moment.js</a> 来解析和显示时间。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>date_format</code></td>
+<td>日期格式</td>
+<td><code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td><code>time_format</code></td>
+<td>时间格式</td>
+<td><code>HH:mm:ss</code></td>
+</tr>
+<tr>
+<td><code>updated_option</code></td>
+<td>当 Front Matter 中没有指定 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/variables#%E9%A1%B5%E9%9D%A2%E5%8F%98%E9%87%8F"><code>updated</code></a> 时 <code>updated</code> 的取值</td>
+<td><code>mtime</code></td>
+</tr>
+</tbody></table>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>per_page</code></td>
+<td>每页显示的文章量 (0 &#x3D; 关闭分页功能)</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>pagination_dir</code></td>
+<td>分页目录</td>
+<td><code>page</code></td>
+</tr>
+</tbody></table>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>主题设置在后一节会介绍，部署设置已经在上一篇教程中介绍。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>theme</code></td>
+<td>当前主题名称。值为<code>false</code>时禁用主题</td>
+</tr>
+<tr>
+<td><code>theme_config</code></td>
+<td>主题的配置文件。在这里放置的配置会覆盖主题目录下的 <code>_config.yml</code> 中的配置</td>
+</tr>
+<tr>
+<td><code>deploy</code></td>
+<td>部署部分的设置</td>
+</tr>
+<tr>
+<td><code>meta_generator</code></td>
+<td><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta#%E5%B1%9E%E6%80%A7">Meta generator</a> 标签。 值为 <code>false</code> 时 Hexo 不会在头部插入该标签</td>
+</tr>
+</tbody></table>
+<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>这里以 <a target="_blank" rel="noopener" href="https://github.com/ChrAlpha/hexo-theme-cards/">Card</a> 主题为例。详细配置方法可以参考 <a target="_blank" rel="noopener" href="https://theme-cards.ichr.me/start/">Theme Cards 参考手册</a>。</p>
+<p>可以使用 Git 拉取「Cards」，以后还可以使用 <code>git pull</code> 直接更新「Cards」。在站点根目录打开终端，并执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ChrAlpha/hexo-theme-cards.git themes/cards</span><br></pre></td></tr></table></figure>
+
+<p>在站点配置文件中，将 <code>theme</code> 的值改为 <code>cards</code>。</p>
+<blockquote>
+<p>如果获取「Cards」时你将文件夹重命名为其他名字，请将 <code>cards</code> 对应为你重命名文件夹的名字。</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: cards</span><br></pre></td></tr></table></figure>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>更新于 2022-12-26</p></div> 
+    <div class="post-entry__tags"><a href="/tags/Hexo/" class="post-tags__link button"># Hexo</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/2022/12/22/hexo-02/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            下一篇
+                        </div>
+                        <div class="nav__title">
+                            Hexo 系列教程 2：Github 部署
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+    <div class="post__comments post__with-toc content-card" id="comment">
+        
+    <h4>评论</h4>
+    
+    
+    
+    <div id="valine_container" class="valine_thread"></div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    </div>
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+    
+    
+        <span id="busuanzi_container_site_uv" hidden>
+            <span></span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span>Viewers</span>
+            
+                <span>&amp;nbsp;&amp;nbsp;&amp;nbsp;|</span>
+            
+        </span>
+    
+    
+        <span id="busuanzi_container_site_pv" hidden>
+            <span></span>
+            <span id="busuanzi_value_site_pv"></span>
+            <span>Views</span>
+            
+        </span>
+    
+ 
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2022 <a href="/">Ryougi&#39;s Blog</a>
+        </p>
+    
+    
+    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+    
+
+    
+    
+    
+    <script>
+        function loadComment() {
+            let e;
+            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js',
+            document.body.appendChild(e);
+            e.onload = () => {
+                var valineConfig = {"appId":"XeYEoCogfqJkjjMD3o09hjg2-9Nh9j0Va","appKey":"CHEGdcHCHV9aD0ElNzAbqxPn","placeholder":null,"path":null,"avatar":null,"meta":["nick","mail","link"],"pageSize":null,"lang":null,"visitor":null,"highlight":false,"avatarForce":null,"recordIP":null,"serverURLs":null,"enableQQ":null,"requiredFields":["nick","mail"],"emojiCDN":null,"emojiMaps":null};
+                valineConfig.el = '#valine_container';
+                for (var i in valineConfig) {
+                    if (valineConfig[i] === null) delete valineConfig[i];
+                }
+                new Valine(valineConfig);
+            };
+        }
+    
+        var runningOnBrowser = typeof window !== "undefined";
+        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+    
+        setTimeout(function () {
+            if (!isBot && supportsIntersectionObserver) {
+                var comment_observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        loadComment();
+                        comment_observer.disconnect();
+                    }
+                }, { threshold: [0] });
+                comment_observer.observe(document.getElementById('comment'));
+            } else {
+                loadComment();
+            }
+        }, 1);
+    </script>
+
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+
+    </body>
+</html>
