@@ -52,14 +52,14 @@
 <meta property="og:site_name" content="Ryougi&#39;s Blog">
 <meta property="og:description" content="一、安装显卡驱动获取显卡与驱动信息： ubuntu-drivers devices  选择推荐版本进行安装： sudo apt install nvidia-driver-515  完成后验证安装结果： nvidia-smi  此时留意所展示的 CUDA Version，如果高于 PyTorch 指导 页面所展示的最高 CUDA 版本，则以 PyTorch 适用的 CUDA 版本为准。 二、安装">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.328888.xyz/2023/01/07/kmefd.png">
+<meta property="og:image" content="https://s2.loli.net/2023/06/06/vhTtpK45Icdy7sX.jpg">
 <meta property="article:published_time" content="2023-01-07T06:52:27.000Z">
-<meta property="article:modified_time" content="2023-01-07T07:38:16.741Z">
+<meta property="article:modified_time" content="2023-06-06T02:30:33.686Z">
 <meta property="article:author" content="Yin Luo">
 <meta property="article:tag" content="PyTorch">
 <meta property="article:tag" content="服务器">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.328888.xyz/2023/01/07/kmefd.png">
+<meta name="twitter:image" content="https://s2.loli.net/2023/06/06/vhTtpK45Icdy7sX.jpg">
 
 
     
@@ -202,8 +202,10 @@
 
 <article class="post post__with-toc content-card">
     <div class="post__header">
+     
+     
     
-        <div class="post-thumbnail" style="background-image: url('https://i.328888.xyz/2023/01/07/kmefd.png');"></div>
+        <div class="post-thumbnail" style="background-image: url('https://s2.loli.net/2023/06/06/vhTtpK45Icdy7sX.jpg');"></div>
     
 </div>
     <div class="post__content">
@@ -236,7 +238,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xvf cudnn-linux-x86_64-8.x.x.x_cudaX.Y-archive.tar.xz</span><br></pre></td></tr></table></figure>
 
 <p>然后输入以下命令执行安装：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include </span><br><span class="line">sudo <span class="built_in">cp</span> -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64 </span><br><span class="line">sudo <span class="built_in">chmod</span> a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> cudnn-*-archive/include/cudnn*.h /usr/local/cuda/include</span><br><span class="line">sudo <span class="built_in">cp</span> -P cudnn-*-archive/lib/libcudnn* /usr/local/cuda/lib64</span><br><span class="line">sudo <span class="built_in">chmod</span> a+r /usr/local/cuda/include/cudnn*.h /usr/local/cuda/lib64/libcudnn*</span><br></pre></td></tr></table></figure>
 
 <p>最后验证安装结果：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure>
@@ -246,7 +248,7 @@
 
     </div>
      
-    <div class="post-footer__meta"><p>更新于 2023-01-07</p></div> 
+    <div class="post-footer__meta"><p>更新于 2023-06-06</p></div> 
     <div class="post-entry__tags"><a href="/tags/PyTorch/" class="post-tags__link button"># PyTorch</a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-tags__link button"># 服务器</a></div> 
 </article>
 
@@ -298,6 +300,7 @@
     
     <div id="valine_container" class="valine_thread"></div>
 
+    
     
     
     
@@ -387,6 +390,7 @@
     
 
     
+
     
     
     <script>
