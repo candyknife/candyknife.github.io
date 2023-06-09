@@ -67,9 +67,9 @@
 
     
     
-        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" >
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/atom-one-light.css" media="none" >
         
-            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/dark.css" media="none">
+            <link rel="stylesheet" id="hl-dark-theme" href="/css/highlight/atom-one-dark.css" media="none">
         
     
 
@@ -204,7 +204,7 @@
      
      
     
-        <div class="post-thumbnail" style="background-image: url('https://s2.loli.net/2023/06/06/dLf7o24CAEmeVOh.png');"></div>
+        <div class="post-thumbnail lazy" data-bg="https://s2.loli.net/2023/06/06/dLf7o24CAEmeVOh.png"></div>
     
 </div>
     <div class="post__content">
@@ -263,7 +263,7 @@
         </div>
         <div class="nav__next">
             
-                <a href="/2022/12/18/hexo-01%20-%20%E5%89%AF%E6%9C%AC/" class="nav__link">
+                <a href="/2022/12/18/hexo-01/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             下一篇
@@ -344,7 +344,15 @@
 </footer>
 
         </div>
-         
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
 
  
 

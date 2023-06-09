@@ -165,7 +165,7 @@
      
      
     
-        <div class="post-thumbnail" style="background-image: url('https://s2.loli.net/2023/06/06/RrGfKw5BVL3EUXb.jpg');"></div>
+        <div class="post-thumbnail lazy" data-bg="https://s2.loli.net/2023/06/06/RrGfKw5BVL3EUXb.jpg"></div>
     
 </div>
 <div class="post-entry__content">
@@ -231,7 +231,15 @@
 </footer>
 
         </div>
-         
+        
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+ 
 
  
 
